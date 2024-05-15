@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    margin: 20px 0 0 10px;
+}
+h2{
+    margin: 10px;
+}
+h3{
+    margin: 10px;
+}
+
+.cats{
+    border: 1px solid black;
+    margin: 10px;
+}
+.box{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    padding: 20px;
+    border: 1px solid black;
+    margin: 0 10px 10px 10px;
+    width: calc(100% / 5);
+}

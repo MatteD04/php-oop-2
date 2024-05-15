@@ -10,8 +10,16 @@ icona della categoria ed il tipo di articolo che si sta visualizzando
 require_once __DIR__ . '/petProducts.php';
 require_once __DIR__ . '/cat.php';
 
-$croquettes = new cat('111', 'Felix special', '12.99', 'food', 'cat');
-var_dump($croquettes);
+$croquettes = new cat('#', 'Felix special', '12.99', 'food', 'cat');
+$pate = new cat('#', 'Fish pate', '8.99', 'food', 'cat');
+$biscuits = new cat('#', 'bisc cat', '4.99', 'food', 'cat');
+// var_dump($croquettes);
+
+$food = [
+    $croquettes,
+    $pate,
+    $biscuits
+];
 
 ?>
 
@@ -20,8 +28,23 @@ var_dump($croquettes);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
     <title>Pet Food</title>
 </head>
 <body>
+    <h1>I NOSTRI PRODOTTI:</h1>
+
+    <div class="cats">
+        <h2>Sezione gatti</h2>
+        <h3>Cibo:</h3>
+        <div class="box">
+            <?php foreach($food as $croquettes) { ?>
+            <div class="card">
+                <div><?php echo $croquettes->image; ?></div>
+                <div><?php echo $croquettes->title; ?></div>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
 </body>
 </html>

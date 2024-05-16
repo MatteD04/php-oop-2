@@ -13,9 +13,9 @@ h3{
     margin: 10px;
 }
 
-.cats{
+.pets{
     border: 1px solid black;
-    margin: 10px;
+    margin: 20px 10px;
 }
 .box{
     display: flex;

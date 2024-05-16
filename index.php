@@ -14,6 +14,8 @@ $croquettes = new cat('#', 'Felix special', '12.99', 'food', 'cat');
 $pate = new cat('#', 'Fish pate', '8.99', 'food', 'cat');
 $biscuits = new cat('#', 'bisc cat', '4.99', 'food', 'cat');
 $kennel = new cat('#', 'pet villa', '35', 'kennel', 'cat');
+$mouse = new cat('#', 'topo racer', '24.99', 'toys', 'cat');
+$scratcher = new cat('#', 'pet scratcher', '14', 'toys', 'cat');
 // var_dump($croquettes);
 
 $food = [
@@ -21,8 +23,14 @@ $food = [
     $pate,
     $biscuits
 ];
+
 $kennels = [
     $kennel
+];
+
+$toys = [
+    $mouse,
+    $scratcher
 ]
 
 ?>
@@ -50,14 +58,25 @@ $kennels = [
             </div>
             <?php } ?>
         </div>
-        
+
         <h3>Cucce:</h3>
         <div class="box">
-            <?php foreach($kennels as $cot) { ?>
+            <?php foreach($kennels as $petHouse) { ?>
             <div class="card">
-                <div><img src=<?php echo $cot->image; ?>></div>
-                <div><?php echo $cot->title; ?></div>
-                <div><?php echo $cot->price; ?> €</div>
+                <div><img src=<?php echo $petHouse->image; ?>></div>
+                <div><?php echo $petHouse->title; ?></div>
+                <div><?php echo $petHouse->price; ?> €</div>
+            </div>
+            <?php } ?>
+        </div>
+
+        <h3>Giochi:</h3>
+        <div class="box">
+            <?php foreach($toys as $toy) { ?>
+            <div class="card">
+                <div><img src=<?php echo $toy->image; ?>></div>
+                <div><?php echo $toy->title; ?></div>
+                <div><?php echo $toy->price; ?> €</div>
             </div>
             <?php } ?>
         </div>

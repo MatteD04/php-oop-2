@@ -13,6 +13,7 @@ require_once __DIR__ . '/cat.php';
 $croquettes = new cat('#', 'Felix special', '12.99', 'food', 'cat');
 $pate = new cat('#', 'Fish pate', '8.99', 'food', 'cat');
 $biscuits = new cat('#', 'bisc cat', '4.99', 'food', 'cat');
+$kennel = new cat('#', 'pet villa', '35', 'kennel', 'cat');
 // var_dump($croquettes);
 
 $food = [
@@ -20,6 +21,9 @@ $food = [
     $pate,
     $biscuits
 ];
+$kennels = [
+    $kennel
+]
 
 ?>
 
@@ -38,10 +42,22 @@ $food = [
         <h2>Sezione gatti</h2>
         <h3>Cibo:</h3>
         <div class="box">
-            <?php foreach($food as $croquettes) { ?>
+            <?php foreach($food as $catFood) { ?>
             <div class="card">
-                <div><?php echo $croquettes->image; ?></div>
-                <div><?php echo $croquettes->title; ?></div>
+                <div><img src=<?php echo $catFood->image; ?>></div>
+                <div><?php echo $catFood->title; ?></div>
+                <div><?php echo $catFood->price; ?> €</div>
+            </div>
+            <?php } ?>
+        </div>
+        
+        <h3>Cucce:</h3>
+        <div class="box">
+            <?php foreach($kennels as $cot) { ?>
+            <div class="card">
+                <div><img src=<?php echo $cot->image; ?>></div>
+                <div><?php echo $cot->title; ?></div>
+                <div><?php echo $cot->price; ?> €</div>
             </div>
             <?php } ?>
         </div>
